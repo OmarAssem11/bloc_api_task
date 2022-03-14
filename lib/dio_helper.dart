@@ -5,7 +5,7 @@ mixin DioHelper {
   static void init() {
     dio = Dio(
       BaseOptions(
-        baseUrl: 'https://api.fungenerators.com',
+        baseUrl: 'https://api.spacexdata.com/v3/',
         receiveDataWhenStatusError: true,
       ),
     );
@@ -13,11 +13,7 @@ mixin DioHelper {
 
   static Future<Response> getData({
     required String url,
-    required Map<String, dynamic> query,
   }) async {
-    return dio.get(
-      url,
-      queryParameters: query,
-    );
+    return dio.get(url);
   }
 }
